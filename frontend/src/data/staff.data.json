@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Mohammad Anas",
+    "email": "anas@gmail.com",
+    "password": "12345",
+    "staffId": "emp001",
+    "dob": "22/01/2005",
+    "gender": "male",
+    "department": "IT",
+    "designation":"Developer",
+    "salary": "5000",
+    "role": "staff",
+    "martialStatus": "single"
+  },
+  {
+    "name": "Mohammad Ali",
+    "email": "ali@gmail.com",
+    "password": "12345",
+    "staffId": "emp002",
+    "dob": "02/01/2006",
+    "gender": "male",
+    "department": "Finance",
+    "designation": "Accountant",
+    "salary": "5000",
+    "role": "staff",
+    "martialStatus": "single"
+  }
+]
