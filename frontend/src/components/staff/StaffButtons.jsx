@@ -27,7 +27,10 @@ const StaffButtons = ({ StaffId }) => {
         Salary
       </button>
 
-      <button className="px-3 py-1 text-sm font-semibold text-white bg-green-600 rounded hover:bg-green-700 transition duration-200 cursor-pointer">
+      <button
+        className="px-3 py-1 text-sm font-semibold text-white bg-green-600 rounded hover:bg-green-700 transition duration-200 cursor-pointer"
+        onClick={() => navigate(`/admin_dashboard/staffs/leaves/${StaffId}`)}
+      >
         Leaves
       </button>
       <button className="px-3 py-1 text-sm font-semibold text-white bg-red-600 rounded hover:bg-red-700 transition duration-200 cursor-pointer">

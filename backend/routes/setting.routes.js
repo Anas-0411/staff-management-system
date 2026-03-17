@@ -4,6 +4,6 @@ import { changePassword } from "../controllers/setting.controller.js";
 
 const settingRouter = Router();
 
-settingRouter.put("/changePassword", auth, changePassword);
+settingRouter.patch("/change-password", auth, changePassword);
 
 export default settingRouter;

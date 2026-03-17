@@ -28,6 +28,9 @@ import LeavesList from "./components/leaves/LeavesList";
 import AddLeaves from "./components/leaves/AddLeaves";
 import { Toaster } from "react-hot-toast";
 import Setting from "./components/employeeDashboard/Setting";
+import LeaveListTable from "./components/leaves/LeaveListTable";
+import LeaveDetails from "./components/leaves/LeaveDetails";
+import AdminSetting from "./components/admin/AdminSetting";
 
 function App() {
   return (
@@ -68,6 +71,15 @@ function App() {
           {/* Salary Routes */}
           <Route path="salary/add" element={<AddSalary />} />
           <Route path="staff/salary/:id" element={<ViewSalary />} />
+
+          {/* Leaves Routes */}
+          <Route path="leaves" element={<LeaveListTable />} />
+          <Route path="leaves/:id" element={<LeaveDetails />} />
+          <Route
+            path="/admin_dashboard/staffs/leaves/:id"
+            element={<LeaveListTable />}
+          />
+          <Route path="setting" element={<AdminSetting />}></Route>
         </Route>
 
         {/* ================= EMPLOYEE DASHBOARD ================= */}

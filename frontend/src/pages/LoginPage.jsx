@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../context/useAuth.js";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -22,7 +24,7 @@ const LoginPage = () => {
       );
 
       if (response.data.success) {
-        const user = response.data.user; // ✅ FIX
+        const user = response.data.user;
 
         // save user to context
         login(user);
@@ -69,16 +71,25 @@ const LoginPage = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <label className="block text-gray-700">Password:</label>
+
             <input
-              type="password"
-              className="w-full px-3 py-2 border rounded"
+              type={showPassword ? "text" : "password"} // 👈 toggle
+              className="w-full px-3 py-2 border rounded pr-10"
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+
+            {/* 👁 Eye Icon */}
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-9 cursor-pointer text-gray-600 text-xl"
+            >
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </span>
           </div>
 
           <div className="mb-4 flex items-center justify-between">

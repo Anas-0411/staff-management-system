@@ -17,7 +17,7 @@ const ViewStaff = () => {
             },
           }
         );
-        console.log(response)
+        // console.log(response)
         if (response.data.success) {
           setStaff(response.data.staff);
         }

@@ -55,8 +55,12 @@ const AdminSidebar = () => {
         </NavLink>
         {/* Leaves */}
         <NavLink
-          to="/admin_dashboard"
-          className="flex items-center space-x-4 py-2 px-4 rounded hover:bg-gray-500"
+          to="/admin_dashboard/leaves"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-teal-500" : ""
+            } flex items-center space-x-4 py-2 px-4 rounded hover:bg-teal-500`
+          }
         >
           <FaCalendarAlt />
           <span>Leaves</span>
@@ -75,8 +79,12 @@ const AdminSidebar = () => {
         </NavLink>
         {/* Settings */}
         <NavLink
-          to="/admin_dashboard"
-          className="flex items-center space-x-4 py-2 px-4 rounded hover:bg-gray-500"
+          to="/admin_dashboard/setting"
+          className={({ isActive }) =>
+            `${
+              isActive ? "bg-teal-500" : ""
+            } flex items-center space-x-4 py-2 px-4 rounded hover:bg-teal-500`
+          }
         >
           <FaCogs />
           <span>Settings</span>

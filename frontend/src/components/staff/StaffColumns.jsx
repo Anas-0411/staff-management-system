@@ -4,13 +4,13 @@ export const columns = [
   {
     name: "S.No",
     selector: (row) => row.sno,
-    width: "40px",
+    width: "80px",
   },
   {
     name: "Name",
     selector: (row) => row.name,
     sortable: true,
-    width: "120px",
+    width: "200px",
   },
   {
     name: "Profile",

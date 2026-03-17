@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../context/useAuth";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-const Setting = () => {
+const AdminSetting = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -144,4 +144,4 @@ const Setting = () => {
   );
 };
 
-export default Setting;
+export default AdminSetting;

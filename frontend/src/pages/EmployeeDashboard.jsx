@@ -1,6 +1,6 @@
 import React from "react";
 import StaffSidebar from "../components/employeeDashboard/StaffSidebar";
-import Navbar from "../components/admin/Navbar";
+import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
 
 const EmployeeDashboard = () => {
