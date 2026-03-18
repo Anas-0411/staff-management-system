@@ -14,6 +14,7 @@ import staffRouter from "./routes/staff.routes.js";
 import salaryRouter from "./routes/salary.routes.js";
 import leaveRouter from "./routes/leave.route.js";
 import settingRouter from "./routes/setting.routes.js";
+import dashboardRouter from "./routes/dashboard.routes.js";
 
 const app = express();
 app.use(cors());
@@ -29,6 +30,7 @@ app.use("/api/staff", staffRouter);
 app.use("/api/salary", salaryRouter);
 app.use("/api/leave", leaveRouter);
 app.use("/api/setting", settingRouter);
+app.use("/api/dashboard", dashboardRouter)
 
 connectDB().then(() => {
   app.listen(PORT, () => {

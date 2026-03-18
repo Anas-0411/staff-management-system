@@ -26,6 +26,7 @@ const StaffList = () => {
             _id: staff._id,
             sno: index + 1,
             dep_name: staff.department?.dep_name,
+            designation: staff.designation,
             name: staff.userId.name,
             dob: new Date(staff.dob).toLocaleDateString(),
             profileImage: (

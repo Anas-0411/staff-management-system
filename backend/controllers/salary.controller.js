@@ -40,10 +40,13 @@ export const addSalary = async (req, res) => {
 
 export const getSalaryById = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id, role } = req.params;
+    // console.log(role);
 
-    let salaries = await SalaryModel.find({ staffId: id }).populate("staffId");
-    if (!salaries || salaries.length < 1) {
+    let salaries;
+    if (role === "admin") {
+      salaries = await SalaryModel.find({ staffId: id }).populate("staffId");
+    } else {
       const staff = await StaffModel.findOne({ userId: id });
       salaries = await SalaryModel.find({ staffId: staff._id }).populate(
         "staffId",

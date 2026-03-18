@@ -11,7 +11,7 @@ import useAuth from "../../context/useAuth";
 const StaffSidebar = () => {
   const {user} = useAuth()
   return (
-        <section className="bg-gray-800 text-white h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64">
+    <section className="bg-gray-800 text-white h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64">
       <div className="bg-teal-600 h-12 flex items-center justify-center">
         <h2 className="text-2xl text-center font-bold">Staff MS</h2>
       </div>
@@ -43,7 +43,7 @@ const StaffSidebar = () => {
         </NavLink>
         {/* Salary */}
         <NavLink
-          to={ `/employee_dashboard/salary/${user._id}`}
+          to={`/employee_dashboard/salary/${user._id}`}
           className={({ isActive }) =>
             `${
               isActive ? "bg-teal-500" : ""
@@ -79,7 +79,7 @@ const StaffSidebar = () => {
         </NavLink>
       </div>
     </section>
-  )
+  );
 }
 
 export default StaffSidebar

@@ -5,6 +5,6 @@ import {auth} from "../middleware/authMiddleware.js";
 const salaryRouter = Router();
 
 salaryRouter.post("/add", auth, addSalary);
-salaryRouter.get("/:id", auth, getSalaryById)
+salaryRouter.get("/:id/:role", auth, getSalaryById);
 
 export default salaryRouter;

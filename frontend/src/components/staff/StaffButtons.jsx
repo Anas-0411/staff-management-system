@@ -21,7 +21,9 @@ const StaffButtons = ({ StaffId }) => {
       </button>
 
       <button
-        onClick={() => navigate(`/admin_dashboard/staff/salary/${StaffId}`)}
+        onClick={() =>
+          navigate(`/admin_dashboard/staff/salary/${StaffId}`)
+        }
         className="px-3 py-1 text-sm font-semibold text-white bg-yellow-600 rounded hover:bg-yellow-700 transition duration-200 cursor-pointer"
       >
         Salary

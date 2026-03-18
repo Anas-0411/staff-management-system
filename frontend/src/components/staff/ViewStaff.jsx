@@ -67,6 +67,10 @@ const ViewStaff = () => {
                 <p className="font-medium">{staff?.department?.dep_name}</p>
               </div>
               <div className="flex space-x-3">
+                <p className="text-lg font-bold">Designation:</p>
+                <p className="font-medium">{staff?.designation}</p>
+              </div>
+              <div className="flex space-x-3">
                 <p className="text-lg font-bold">Marital Status:</p>
                 <p className="font-medium">{staff?.maritalStatus}</p>
               </div>
@@ -74,7 +78,9 @@ const ViewStaff = () => {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center items-center h-screen">Loading...</div>
+        <div className="flex justify-center items-center h-screen">
+          Loading...
+        </div>
       )}
     </>
   );

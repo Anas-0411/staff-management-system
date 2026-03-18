@@ -1,22 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useAuth from "../../context/useAuth";
 
 const ViewSalary = () => {
   const [salaries, setSalaries] = useState([]);
   const [filteredSalaries, setFilteredSalaries] = useState([]);
   const { id } = useParams();
+  const { user } = useAuth();
 
   useEffect(() => {
     const fetchSalaries = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/salary/${id}`,
+          `http://localhost:3000/api/salary/${id}/${user.role}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
-          }
+          },
         );
         if (response.data.success) {
           setSalaries(response.data.salaries);
@@ -35,7 +37,7 @@ const ViewSalary = () => {
       new Date(salary.payDate)
         .toLocaleDateString()
         .toLowerCase()
-        .includes(q.toLowerCase())
+        .includes(q.toLowerCase()),
     );
     setFilteredSalaries(filteredRecords);
   };
